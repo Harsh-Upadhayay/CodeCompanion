@@ -1,14 +1,16 @@
-from time import sleep
+import sys
 import requests
 from bs4 import BeautifulSoup
-import datetime
 
 class Problem:
 
   def __init__(self, URL):
     
-    r = requests.get(URL)
-    soup = BeautifulSoup(r.content, 'html5lib') 
+    try : 
+      r = requests.get(URL)
+      soup = BeautifulSoup(r.content, 'html5lib') 
+    except Exception as e : 
+      sys.exit("!! Can't fetch webpage, try rechecking the link !!")
     
     x =  soup.find('div', attrs = {'class':'title'}) 
     self.name = x.text;    
