@@ -19,6 +19,6 @@ class Link :
             self.site = 'cc'
         else :
             self.link = "https://codeforces.com/problemset/problem/1702/C"
-            # print("\t\t !! Problem link not added, add the link in the first line of the source code !!\n") 
+            print("\t\t !! Problem link not added, add the link in the first line of the source code !!\n") 
 
 l = Link()
