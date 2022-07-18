@@ -11,9 +11,14 @@ class Link :
             sys.exit("\t\t!! Source File not found, check path in LOCAL_VARS !!\n", e)
         
         self.link = f.readline()[2 : -3]
-        self.lin = self.link.strip()
+        self.link = self.link.strip()
 
-        if self.link.count("codeforces.com") != 1 :
-            sys.exit("\t\t !! Problem link not added, add the link in the first line of the source code !!\n") 
+        if self.link.count("codeforces.com") == 1:
+            self.site = "cf"
+        elif self.link.count("codechef.com") == 1:
+            self.site = 'cc'
+        else :
+            self.link = "https://codeforces.com/problemset/problem/1702/C"
+            # print("\t\t !! Problem link not added, add the link in the first line of the source code !!\n") 
 
 l = Link()
